@@ -1,0 +1,32 @@
+# ===========================
+# CONFIGURATION FILE
+# ===========================
+
+# General setup
+pooled: true          # true if samples are pooled (multi-donor)
+num_donors: 3         # change number of donors for vireo
+cores: 16             # number of cores to use per rule
+mem: 8000            # memory in MB (e.g., 8 GB)
+
+# Paths 
+fastq_dir: "user_path/fastq_files" ## Add user specific path 
+ref: "user_path/refdata-cellranger-arc-GRCh38-2020-A-2.0.0" ## Add user specific path  
+donor_snp_file: "user_path/donor_snps.vcf.gz" ## Add user specific path  
+
+# Tool locations (optional but recommended)
+cellranger_atac_path: "user_path/cellranger-atac" ## Add user specific path
+cellsnp_path: "user_path/cellsnp-lite" ## Add user specific path
+vireo_path: "user_path/vireo" ## Add user specific path
+
+# Output directories
+output_dir: "cellranger_output"
+output_dir_qc: "cellranger_output/QC"
+
+scripts:
+  import_data: "scripts/import.R"
+  qc: "scripts/QC.R"
+  norm_signac: "scripts/normalization.R"
+  peaks_n: "scripts/peaks_n.R"
+  motif_analysis: "scripts/motifs.R"
+  log_dir: "logs"
+
